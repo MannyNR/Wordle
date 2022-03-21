@@ -2,7 +2,7 @@
 
 ## My 1st attempt on making Wordle.
 
-## Deployed Game Site [link]()
+## Deployed Game Site [link](https://mannynr.github.io/Wordle/)
 
 # Project Description
 
