@@ -3,6 +3,7 @@
 ## My 1st attempt on making Wordle.
 
 ## Deployed Game Site [link](https://mannynr.github.io/Wordle/)
+![Image](preview.png "preview")
 
 # Project Description
 
