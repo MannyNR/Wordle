@@ -1,7 +1,6 @@
 let row = 0; //starting row when game starts.
 let column = 0; //starting column when word try starts.
 let rows = 5; //Decided on only allowing 5 attempts instead of the game's 6, to make it a bit more challenging and make the player think more before submitting a word.
-let columns = 5;
 let gameOver = false;
 let words = [
   "cigar",
@@ -2322,6 +2321,7 @@ let words = [
 ];
 
 let word = words[Math.floor(Math.random() * words.length)].toUpperCase();
+let columns = word.length;
 
 //just like the duckhunt HW
 window.onload = function () {
@@ -2332,7 +2332,7 @@ window.onload = function () {
 //creating word grid and rest of game functions:
 startGame = () => {
   for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < word.length; j++) {
+    for (let j = 0; j < columns; j++) {
       let wordGrid = document.querySelector("#wordGrid");
       let tile = document.createElement("span");
       tile.id = i.toString() + "-" + j.toString();
@@ -2358,6 +2358,7 @@ startGame = () => {
       }
     } else if (e.code == "Backspace") {
       if (0 < column && column <= columns) {
+        //delete up to index 0 on the column
         column -= 1;
       }
       let currentTile = document.getElementById(
