@@ -2365,13 +2365,17 @@ startGame = () => {
       );
       currentTile.innerText = "";
     } else if (e.code == "Enter") {
-      update();
-      row += 1; //goes to next row.
-      column = 0; // starts back at column's 0 index in the new row we just came down to.
+      if (column == columns) {
+        update();
+        row += 1; //goes to next row.
+        column = 0; // starts back at column's 0 index in the new row we just came down to.
+      }
     }
     if (!gameOver && row == rows) {
       gameOver = true;
-      document.querySelector("#answer").innerText = word;
+      document.querySelector(
+        "#answer"
+      ).innerText = `Sorry you lost, the word was ${word}`;
     }
   });
 };
@@ -2403,7 +2407,7 @@ function update() {
 
     if (correctLetters == columns) {
       gameOver = true;
-      alert("Congrats, You Won!");
+      document.querySelector("#answer").innerText = "Congrats! You won!";
     }
   }
 
